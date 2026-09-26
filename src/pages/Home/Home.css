@@ -1,0 +1,72 @@
+.home {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #0b0b0b;
+  color: #f2f0eb;
+}
+
+.home__content {
+  width: min(900px, calc(100% - 40px));
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.home__brand {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+
+  opacity: 0.75;
+}
+
+.home__thought {
+  max-width: 850px;
+}
+
+.home__footer {
+  position: absolute;
+  bottom: 28px;
+  left: 32px;
+  right: 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  opacity: 0.45;
+}
+
+@media (max-width: 600px) {
+  .home__brand {
+    top: 20px;
+    left: 20px;
+  }
+
+  .home__content {
+    width: calc(100% - 32px);
+  }
+
+  .home__footer {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+}
