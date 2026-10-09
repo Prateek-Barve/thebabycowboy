@@ -1,4 +1,4 @@
-param location string = 'centralindia'
+param location string = 'centralus'
 param staticWebAppName string = 'thebabycowboy-ui-dev'
 
 resource staticWebApp 'Microsoft.Web/staticSites@2023-12-01' = {
@@ -11,5 +11,6 @@ resource staticWebApp 'Microsoft.Web/staticSites@2023-12-01' = {
   properties: {}
 }
 
-output staticWebAppDeploymentToken string = listSecrets(staticWebApp.id, staticWebApp.apiVersion).properties.apiKey
+#disable-next-line outputs-should-not-contain-secrets
+output staticWebAppDeploymentToken string = staticWebApp.listSecrets().properties.apiKey
 output staticWebAppDefaultHostname string = staticWebApp.properties.defaultHostname
