@@ -1,6 +1,6 @@
 import type { Thought } from "../types/home";
 
-const API_BASE_URL = "https://localhost:7059";
+const API_BASE_URL = "https://thebabycowboy.azurewebsites.net";
 
 export interface CreateReflectionRequest {
   thoughtId: string;
