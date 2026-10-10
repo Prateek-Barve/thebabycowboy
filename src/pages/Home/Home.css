@@ -70,3 +70,48 @@
     right: 20px;
   }
 }
+
+
+.home-explore-link {
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 9px 16px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 999px;
+
+  color: inherit;
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.home-explore-link:hover {
+  background: rgb(255 255 255 / 8%);
+  border-color: rgb(255 255 255 / 50%);
+}
+
+.home-explore-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .home-explore-link {
+    top: 12px;
+    right: 20px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}

@@ -7,6 +7,11 @@ const Home = () => {
       <div className="home__brand">
         thebabycowboy
       </div>
+      
+      <a className="home-explore-link" href="/about">
+        Explore <span aria-hidden="true">↗</span>
+      </a>
+
 
       <div className="home__content">
         <ThoughtExperience />
@@ -19,5 +24,4 @@ const Home = () => {
     </main>
   );
 };
-
 export default Home;

@@ -1,0 +1,27 @@
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  margin-top: auto;
+  border-top: 1px solid var(--site-border);
+}
+
+.site-footer__message,
+.site-footer__copyright {
+  color: var(--site-muted);
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 0;
+  }
+}
