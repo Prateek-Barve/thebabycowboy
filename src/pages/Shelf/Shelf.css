@@ -532,3 +532,97 @@
     transform: none;
   }
 }
+
+
+/* Spotify playlist cards */
+
+.shelf-card--playlist {
+  display: flex;
+  flex-direction: column;
+  background: #fbfaf6;
+}
+
+.shelf-playlist-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 100px;
+  padding: 22px 19px;
+  border-bottom: 1px solid var(--site-border);
+  background: #f1f3ec;
+}
+
+.shelf-playlist-heading__icon {
+  display: grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 50%;
+  background: #1db954;
+  color: #102a18;
+  font-size: 27px;
+}
+
+.shelf-playlist-heading__label {
+  color: #52634a;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+.shelf-card--playlist .shelf-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.shelf-playlist-player {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.shelf-playlist-player iframe {
+  display: block;
+  width: 100%;
+  min-height: 352px;
+  border: 0;
+  border-radius: 12px;
+  background: #181818;
+}
+
+.shelf-playlist-link {
+  align-self: flex-start;
+  color: var(--site-muted);
+  font-size: 11px;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.shelf-playlist-link:hover {
+  color: #168b40;
+}
+
+.shelf-playlist-link:focus-visible {
+  outline: 2px solid #1db954;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .shelf-playlist-heading {
+    min-height: 84px;
+    padding: 17px;
+  }
+
+  .shelf-playlist-heading__icon {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .shelf-playlist-player iframe {
+    min-height: 352px;
+  }
+}

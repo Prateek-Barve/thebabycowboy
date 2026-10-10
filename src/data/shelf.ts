@@ -1,11 +1,13 @@
-export type ShelfCategory = "Book" | "Movie" | "Series";
+
+export type ShelfCategory = "Book" | "Movie" | "Series" | "Playlist";
 
 export type ShelfStatus =
   | "Currently Reading"
   | "Read"
   | "Watched"
   | "Watching"
-  | "Completed";
+  | "Completed"
+  | "Curated";
 
 export interface ShelfItem {
   id: string;
@@ -17,6 +19,7 @@ export interface ShelfItem {
   description: string;
   coverClass: string;
   featured?: boolean;
+  spotifyPlaylistId?: string;
 }
 
 export const shelfItems: ShelfItem[] = [
@@ -125,5 +128,25 @@ export const shelfItems: ShelfItem[] = [
     description:
       "A modern detective story full of intricate mysteries and sharp deductions.",
     coverClass: "sherlock",
+  },
+  {
+    id: "playlist-1",
+    title: "Lofi Sleep",
+    category: "Playlist",
+    status: "Curated",
+    creator: "Spotify",
+    description: "Lofi sleep and chills to help you relax and unwind.",
+    coverClass: "shelf-cover--playlist",
+    spotifyPlaylistId: "37i9dQZF1DX2PQDq3PdrHQ",
+  },
+  {
+    id: "playlist-2",
+    title: "2000's Pop Hits",
+    category: "Playlist",
+    status: "Curated",
+    creator: "Spotify",
+    description: "Popular hits from the 2000s to get you dancing.",
+    coverClass: "shelf-cover--playlist",
+    spotifyPlaylistId: "4OCgVSzsFytJMLkGkQJeA0",
   },
 ];
