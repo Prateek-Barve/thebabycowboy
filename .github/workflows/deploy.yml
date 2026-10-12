@@ -47,3 +47,5 @@ jobs:
           app_location: '/'
           api_location: ''
           output_location: 'dist' # Vite builds to the 'dist' folder
+        env:
+          VITE_MEDIA_API_BASE_URL: ${{ secrets.VITE_MEDIA_API_BASE_URL }}
