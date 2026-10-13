@@ -49,3 +49,4 @@ jobs:
           output_location: 'dist' # Vite builds to the 'dist' folder
         env:
           VITE_MEDIA_API_BASE_URL: ${{ secrets.VITE_MEDIA_API_BASE_URL }}
+          VITE_CONTENT_API_URL: ${{ secrets.VITE_CONTENT_API_URL }}
