@@ -1,3 +1,4 @@
+
 .home {
   position: relative;
   min-height: 100svh;
@@ -11,7 +12,7 @@
 }
 
 .home__content {
-  width: min(900px, calc(100% - 40px));
+  width: min(1200px, calc(100% - 64px));
   margin: auto;
 
   display: flex;
@@ -34,7 +35,7 @@
 }
 
 .home__thought {
-  max-width: 850px;
+  max-width: 1100px;
 }
 
 .home__footer {
@@ -53,24 +54,6 @@
 
   opacity: 0.45;
 }
-
-@media (max-width: 600px) {
-  .home__brand {
-    top: 20px;
-    left: 20px;
-  }
-
-  .home__content {
-    width: calc(100% - 32px);
-  }
-
-  .home__footer {
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-  }
-}
-
 
 .home-explore-link {
   position: absolute;
@@ -107,17 +90,6 @@
   outline-offset: 4px;
 }
 
-@media (max-width: 600px) {
-  .home-explore-link {
-    top: 12px;
-    right: 20px;
-    padding: 8px 12px;
-    font-size: 0.8rem;
-  }
-}
-
-
-
 /* Keep the thought experience in a stable vertical layout */
 .thought-experience {
   width: 100%;
@@ -126,7 +98,27 @@
   align-items: center;
 }
 
-/* Fixed area for the reflection form, loading message, or AI response */
+/* Reserve space for changing thoughts */
+.thought-experience__thought-slot {
+  width: 100%;
+  margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Keep the thought centered within its reserved area */
+.thought-experience__thought {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reserve a consistent area for the input and AI response */
 .thought-experience__interaction-slot {
   width: 100%;
   height: clamp(260px, 34vh, 310px);
@@ -139,6 +131,7 @@
 
 .thought-experience__interaction {
   width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,7 +142,7 @@
   margin-top: 0;
 }
 
-/* Keep the loading message centred in its reserved space */
+/* Keep the processing message centered */
 .thought-status {
   width: 100%;
   margin: 0;
@@ -160,10 +153,47 @@
   color: rgba(242, 240, 235, 0.55);
 }
 
-/* Make the content fit smaller screens */
+/* Tablet and mobile layouts */
 @media (max-width: 600px) {
+  .home {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .home__brand {
+    top: 20px;
+    left: 20px;
+  }
+
+  .home__content {
+    width: calc(100% - 32px);
+    margin: 88px auto 24px;
+  }
+
+  .home__footer {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+
+    margin: auto 20px 20px;
+  }
+
+  .home-explore-link {
+    top: 12px;
+    right: 20px;
+
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .home__thought {
+    max-width: 100%;
+  }
+
   .thought-experience__thought-slot {
     height: clamp(220px, 34svh, 300px);
+    margin-bottom: 24px;
   }
 
   .thought-experience__interaction-slot {
@@ -193,23 +223,4 @@
   .ai-response__text {
     font-size: clamp(1.35rem, 5.5vw, 1.8rem);
   }
-
-  .home {
-  overflow-x: hidden;
-  overflow-y: auto;
 }
-
-.home__content {
-  margin: 88px auto 24px;
-}
-
-.home__footer {
-  position: relative;
-  bottom: auto;
-  left: auto;
-  right: auto;
-
-  margin: auto 20px 20px;
-}
-}
-
