@@ -1,10 +1,20 @@
-.reflection-input {
+/* .reflection-input {
   width: min(600px, 100%);
   margin-top: 55px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+} */
+
+.reflection-input {
+  width: min(600px, 100%);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .reflection-input__label {
@@ -18,6 +28,29 @@
 }
 
 .reflection-input__textarea {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  box-sizing: border-box;
+
+  padding: 18px 20px;
+  resize: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.04);
+  color: #f2f0eb;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  transition:
+    border-color 200ms ease,
+    background 200ms ease;
+}
+/* .reflection-input__textarea {
   width: 100%;
   min-height: 120px;
 
@@ -39,7 +72,7 @@
   transition:
     border-color 200ms ease,
     background 200ms ease;
-}
+} */
 
 .reflection-input__textarea::placeholder {
   color: rgba(255, 255, 255, 0.3);

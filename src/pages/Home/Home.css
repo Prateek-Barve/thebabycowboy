@@ -115,3 +115,101 @@
     font-size: 0.8rem;
   }
 }
+
+
+
+/* Keep the thought experience in a stable vertical layout */
+.thought-experience {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Fixed area for the reflection form, loading message, or AI response */
+.thought-experience__interaction-slot {
+  width: 100%;
+  height: clamp(260px, 34vh, 310px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.thought-experience__interaction {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Remove the old top margin that offsets the textbox */
+.reflection-input {
+  margin-top: 0;
+}
+
+/* Keep the loading message centred in its reserved space */
+.thought-status {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: rgba(242, 240, 235, 0.55);
+}
+
+/* Make the content fit smaller screens */
+@media (max-width: 600px) {
+  .thought-experience__thought-slot {
+    height: clamp(220px, 34svh, 300px);
+  }
+
+  .thought-experience__interaction-slot {
+    height: 280px;
+  }
+
+  .thought-display__text {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.12;
+  }
+
+  .reflection-input {
+    width: 100%;
+  }
+
+  .reflection-input__textarea {
+    min-height: 110px;
+    font-size: 16px;
+  }
+
+  .ai-response {
+    width: 100%;
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+
+  .ai-response__text {
+    font-size: clamp(1.35rem, 5.5vw, 1.8rem);
+  }
+
+  .home {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.home__content {
+  margin: 88px auto 24px;
+}
+
+.home__footer {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  right: auto;
+
+  margin: auto 20px 20px;
+}
+}
+

@@ -1,4 +1,4 @@
-.thought-display {
+/* .thought-display {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,4 +21,54 @@
   font-size: 14px;
   letter-spacing: 0.08em;
   opacity: 0.5;
+} */
+
+
+.thought-display {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.thought-display__text {
+  width: 100%;
+  max-width: 850px;
+  margin: 0;
+
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.thought-display__author {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+}
+
+/* Reserve a consistent area for changing thoughts */
+.thought-experience__thought-slot {
+  width: 100%;
+  height: clamp(240px, 40vh, 360px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thought-experience__thought {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

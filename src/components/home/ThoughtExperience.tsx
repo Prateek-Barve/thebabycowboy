@@ -152,60 +152,156 @@ function ThoughtExperience() {
     );
   }
 
-  return (
-    <section className="thought-experience">
+  // return (
+  //   <section className="thought-experience">
 
-      {/* -------------------------------- */}
-      {/* Thought transition                */}
-      {/* -------------------------------- */}
+  //     {/* -------------------------------- */}
+  //     {/* Thought transition                */}
+  //     {/* -------------------------------- */}
 
+  //     <AnimatePresence mode="wait">
+  //       <motion.div
+  //         key={currentThought.id}
+  //         initial={{
+  //           opacity: 0,
+  //           y: 15,
+  //         }}
+  //         animate={{
+  //           opacity: 1,
+  //           y: 0,
+  //         }}
+  //         exit={{
+  //           opacity: 0,
+  //           y: -15,
+  //         }}
+  //         transition={{
+  //           duration: 0.7,
+  //           ease: "easeInOut",
+  //         }}
+  //       >
+  //         <ThoughtDisplay
+  //           thought={currentThought}
+  //         />
+  //       </motion.div>
+  //     </AnimatePresence>
+
+  //     {/* -------------------------------- */}
+  //     {/* Reflection / Generating / AI     */}
+  //     {/* -------------------------------- */}
+
+  //     <AnimatePresence mode="wait">
+
+  //       {phase === "reflection" && (
+  //         <motion.div
+  //           key="reflection"
+  //           initial={{
+  //             opacity: 0,
+  //             y: 10,
+  //           }}
+  //           animate={{
+  //             opacity: 1,
+  //             y: 0,
+  //           }}
+  //           exit={{
+  //             opacity: 0,
+  //             y: -10,
+  //           }}
+  //           transition={{
+  //             duration: 0.5,
+  //             ease: "easeInOut",
+  //           }}
+  //         >
+  //           <ReflectionInput
+  //             value={reflection}
+  //             onChange={setReflection}
+  //             onSubmit={handleSubmit}
+  //           />
+  //         </motion.div>
+  //       )}
+
+  //       {phase === "generating" && (
+  //         <motion.p
+  //           key="generating"
+  //           className="thought-status"
+  //           initial={{
+  //             opacity: 0,
+  //           }}
+  //           animate={{
+  //             opacity: 1,
+  //           }}
+  //           exit={{
+  //             opacity: 0,
+  //           }}
+  //           transition={{
+  //             duration: 0.4,
+  //           }}
+  //         >
+  //           Thinking...
+  //         </motion.p>
+  //       )}
+
+  //       {phase === "response" && (
+  //         <motion.div
+  //           key="response"
+  //           initial={{
+  //             opacity: 0,
+  //             y: 10,
+  //           }}
+  //           animate={{
+  //             opacity: 1,
+  //             y: 0,
+  //           }}
+  //           exit={{
+  //             opacity: 0,
+  //             y: -10,
+  //           }}
+  //           transition={{
+  //             duration: 0.6,
+  //             ease: "easeInOut",
+  //           }}
+  //         >
+  //           <AIResponse
+  //             response={aiResponse}
+  //           />
+  //         </motion.div>
+  //       )}
+
+  //     </AnimatePresence>
+
+  //   </section>
+  // );
+  
+return (
+  <section className="thought-experience">
+    {/* Fixed thought area */}
+    <div className="thought-experience__thought-slot">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentThought.id}
-          initial={{
-            opacity: 0,
-            y: 15,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          exit={{
-            opacity: 0,
-            y: -15,
-          }}
+          className="thought-experience__thought"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -15 }}
           transition={{
             duration: 0.7,
             ease: "easeInOut",
           }}
         >
-          <ThoughtDisplay
-            thought={currentThought}
-          />
+          <ThoughtDisplay thought={currentThought} />
         </motion.div>
       </AnimatePresence>
+    </div>
 
-      {/* -------------------------------- */}
-      {/* Reflection / Generating / AI     */}
-      {/* -------------------------------- */}
-
+    {/* Fixed interaction area */}
+    <div className="thought-experience__interaction-slot">
       <AnimatePresence mode="wait">
-
         {phase === "reflection" && (
           <motion.div
             key="reflection"
-            initial={{
-              opacity: 0,
-              y: 10,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: -10,
-            }}
+            className="thought-experience__interaction"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{
               duration: 0.5,
               ease: "easeInOut",
@@ -223,53 +319,35 @@ function ThoughtExperience() {
           <motion.p
             key="generating"
             className="thought-status"
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            exit={{
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.4,
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
           >
-            Thinking...
+            Let’s see what Prateek might think...
           </motion.p>
         )}
 
         {phase === "response" && (
           <motion.div
             key="response"
-            initial={{
-              opacity: 0,
-              y: 10,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: -10,
-            }}
+            className="thought-experience__interaction"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{
               duration: 0.6,
               ease: "easeInOut",
             }}
           >
-            <AIResponse
-              response={aiResponse}
-            />
+            <AIResponse response={aiResponse} />
           </motion.div>
         )}
-
       </AnimatePresence>
+    </div>
+  </section>
+);
 
-    </section>
-  );
 }
 
 export default ThoughtExperience;
